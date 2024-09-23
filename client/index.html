@@ -1,13 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <script type="module" src="./app.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Phase 5</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <h1>Phase 5</h1>
+
+    <div id="user-details">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Please enter your name"
+      />
+      <label for="age">Age</label>
+      <input
+        type="number"
+        name="age"
+        id="age"
+        placeholder="Please enter your age"
+      />
+      <button type="submit">Submit</button>
+    </div>
+
+    <div id="leaderboard">leaderboard here</div>
+
+    <div id="question-container">
+      <button>Previous</button>
+      <!-- <div>Level number</div>  -->
+      <button>Next</button>
+      <form>
+        <label for="question1">Question number 1</label>
+        <input type="number" name="question1" id="question1" />
+        <button type="submit">Submit</button>
+      </form>
+      <form>
+        <label for="question2">Question number 2</label>
+        <input type="number" name="question2" id="question2" />
+        <button type="submit">Submit</button>
+      </form>
+      <form>
+        <label for="question3">Question number 3</label>
+        <input type="number" name="question3" id="question3" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div id="image-container">images go here</div>
   </body>
+  <footer>Created by Anthony, Kat, Khadija & Serdrick</footer>
 </html>
