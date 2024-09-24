@@ -5,6 +5,7 @@ const questionForm = document.getElementById("answer-form");
 const questionField = document.querySelector(".answer-field");
 const pointsNeeded = document.querySelector(".points-needed");
 const mistakesAllowed = document.querySelector(".mistakes-allowed");
+const imageTag = document.getElementById("image");
 
 console.log("Test");
 
@@ -29,46 +30,74 @@ document.getElementById("form").addEventListener("submit", async (e) => {
 let state = {
   score: 0,
   wrongAnswers: 0,
+  currentProblem: 0,
 };
 
+let questionArray = [
+  "How many lion cubs are in this image?",
+  "How many meerkats are in this image?",
+  "How many zebras are in this image?",
+];
+
+let answers = [6, 13, 17];
+
+const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
+
 function updateProblem() {
-  state.currentProblem = generateProblem();
-  problemElement.innerHTML = `${state.currentProblem.question1}`;
+  problemElement.textContent = questionArray[state.currentProblem];
+  imageTag.src = images[state.currentProblem];
   questionField.value = "";
   questionField.focus();
 }
 
 updateProblem();
 
-function generateProblem() {
-  return {
-    question1: "How many lion cubs are in this image?",
-    question2: "How many meerkats are in this image?",
-    question3: "How many zebras are in this image?",
-  };
-}
-
 questionForm.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
 
-  let correctAnswer;
-  if (state.currentProblem == question1) correctAnswer = 6;
-  if (state.currentProblem == question2) correctAnswer = 13;
-  if (state.currentProblem.question3 == question3) correctAnswer = 17;
+  const userAnswer = parseInt(questionField.value, 10); // Convert answer to a number
+  const correctAnswer = answers[state.currentProblem];
 
-  if (parseInt(questionField.value, 10) === correctAnswer) {
+  if (userAnswer === correctAnswer) {
     state.score++;
     pointsNeeded.textContent = 3 - state.score;
+
+    // Go to the next problem
+    state.currentProblem = (state.currentProblem + 1) % questionArray.length;
     updateProblem();
   } else {
     state.wrongAnswers++;
     mistakesAllowed.textContent = 2 - state.wrongAnswers;
+    questionField.value = "";
+    questionField.focus();
+  }
+  checkLogic();
+}
+
+function checkLogic() {
+  //if you won -- submit score to the db??
+  if (state.score === 3) {
+    alert("Congrats! You won.");
+    resetGame();
+  }
+
+  //if you lost -- submit score to the db??
+  if (state.wrongAnswers === 3) {
+    alert("Sorry, you lost.");
+    resetGame();
   }
 }
 
-function checkLogic() {}
+function resetGame() {
+  state.currentProblem = 0;
+  state.score = 0;
+  state.wrongAnswers = 0;
+  pointsNeeded.textContent = 3;
+  mistakesAllowed.textContent = 2;
+  updateProblem();
+}
 
 // formData = new FormData(form);
 
@@ -85,30 +114,30 @@ localStorage.setItem("username", username);
 
 localStorage.setItem("age", age);
 
-const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
+// const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
 
-const firstImage = 0;
-const lastImage = images.length - 1;
-let currentImage = 0;
+// const firstImage = 0;
+// const lastImage = images.length - 1;
+// let currentImage = 0;
 
-const nextButton = document.getElementById("next");
-nextButton.addEventListener("click", () => {
-  const imageTag = document.getElementById("image");
-  currentImage++;
-  if (currentImage >= lastImage) {
-    currentImage = 2;
-  }
-  imageTag.src = images[currentImage];
-});
+// const nextButton = document.getElementById("next");
+// nextButton.addEventListener("click", () => {
+//   const imageTag = document.getElementById("image");
+//   currentImage++;
+//   if (currentImage >= lastImage) {
+//     currentImage = 2;
+//   }
+//   imageTag.src = images[currentImage];
+// });
 
-const prevButton = document.getElementById("prev");
-prevButton.addEventListener("click", () => {
-  const imageTag = document.getElementById("image");
-  currentImage--;
-  if (currentImage <= firstImage) {
-    currentImage = 0;
-    // debugger;
-  }
+// const prevButton = document.getElementById("prev");
+// prevButton.addEventListener("click", () => {
+//   const imageTag = document.getElementById("image");
+//   currentImage--;
+//   if (currentImage <= firstImage) {
+//     currentImage = 0;
+//     // debugger;
+//   }
 
-  imageTag.src = images[currentImage];
-});
+//   imageTag.src = images[currentImage];
+// });
