@@ -1,14 +1,15 @@
-const form = document.querySelector("form");
-const formData = document.querySelector("form");
+const form = document.getElementById("form");
+const formData = document.getElementById("form");
 const problemElement = document.querySelector(".problem");
-const questionForm = document.querySelector(".answer-form");
+const questionForm = document.getElementById("answer-form");
 const questionField = document.querySelector(".answer-field");
 const pointsNeeded = document.querySelector(".points-needed");
 const mistakesAllowed = document.querySelector(".mistakes-allowed");
 
 console.log("Test");
 
-form.addEventListener("submit", function (event) {
+document.getElementById("form").addEventListener("submit", async(event) => {
+// form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const formData = new FormData(form);
@@ -16,6 +17,7 @@ form.addEventListener("submit", function (event) {
   const formValues = Object.fromEntries(formData);
 
   console.log(formValues);
+});
 
   const images = [
     "images/Lions.jpg",
@@ -91,6 +93,8 @@ function handleSubmit(event) {
     mistakesAllowed.textContent = 2 - state.wrongAnswers;
   }
 }
+
+function checkLogic() {}
 
 const username = localStorage.getItem("username");
 
