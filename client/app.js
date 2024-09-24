@@ -1,5 +1,5 @@
-
 const form = document.querySelector("form");
+const formData = document.querySelector("form");
 const problemElement = document.querySelector(".problem");
 const questionForm = document.querySelector(".answer-form");
 const questionField = document.querySelector(".answer-field");
@@ -7,8 +7,6 @@ const pointsNeeded = document.querySelector(".points-needed");
 const mistakesAllowed = document.querySelector(".mistakes-allowed");
 
 console.log("Test");
-
-const form = document.querySelector("form");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -18,9 +16,6 @@ form.addEventListener("submit", function (event) {
   const formValues = Object.fromEntries(formData);
 
   console.log(formValues);
-
-  setupCounter(document.querySelector("#counter"));
-  console.log("Test");
 
   const images = [
     "images/Lions.jpg",
@@ -53,7 +48,7 @@ form.addEventListener("submit", function (event) {
 
     imageTag.src = images[currentImage];
   });
-}
+});
 
 let state = {
   score: 0,
@@ -62,16 +57,16 @@ let state = {
 
 function updateProblem() {
   state.currentProblem = generateProblem();
-  problemElement.innerHTML = `${state.currentProblem.question1} ${state.currentProblem.question2} ${state.currentProblem.question3}`;
+  problemElement.innerHTML = `${state.currentProblem.question1}`;
 }
 
 updateProblem();
 
 function generateProblem() {
   return {
-    question1: "count the number of X",
-    question2: "count the number of Y",
-    question3: "count the number of Z",
+    question1: "How many lion cubs are in this image?",
+    question2: "How many meerkats are in this image?",
+    question3: "How many zebras are in this image?",
   };
 }
 
@@ -81,9 +76,9 @@ function handleSubmit(event) {
   event.preventDefault();
 
   let correctAnswer;
-  if (state.currentProblem.question1 == question1) correctAnswer = X;
-  if (state.currentProblem.question2 == question2) correctAnswer = Y;
-  if (state.currentProblem.question3 == question3) correctAnswer = Z;
+  if (state.currentProblem == question1) correctAnswer = 6;
+  if (state.currentProblem == question2) correctAnswer = 13;
+  if (state.currentProblem.question3 == question3) correctAnswer = 17;
 
   if (parseInt(questionField.value, 10) === correctAnswer) {
     state.score++;
@@ -93,15 +88,14 @@ function handleSubmit(event) {
     mistakesAllowed.textContent = 2 - state.wrongAnswers;
   }
 }
-  const username = formData.get("username");
 
-  const age = formData.get("age");
+const username = localStorage.getItem("username");
 
-  localStorage.setItem("username", username);
+const age = localStorage.getItem("age");
 
-  localStorage.setItem("age", age);
-});
+localStorage.setItem("username", username);
 
+localStorage.setItem("age", age);
 
 const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
 
@@ -125,7 +119,7 @@ prevButton.addEventListener("click", () => {
   currentImage--;
   if (currentImage <= firstImage) {
     currentImage = 0;
-    debugger;
+    // debugger;
   }
 
   imageTag.src = images[currentImage];

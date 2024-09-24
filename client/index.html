@@ -10,28 +10,6 @@
   </head>
   <body>
     <h1>Phase 5</h1>
-<form class="form"> 
-    <div id="user-details">
-      <label for="username">Username</label>
-      <input
-        type="text"
-        name="username"
-        id="username"
-        placeholder="Please enter your name"
-        required
-      />
-      <label for="age">Age</label>
-      <input
-        type="number"
-        name="age"
-        id="age"
-        placeholder="Please enter your age"
-        required
-      />
-      <button type="submit">Submit</button>
-    </div>
-  </form>
-=======
     <form class="form">
       <div id="user-details">
         <label for="username">Username</label>
@@ -40,14 +18,15 @@
           name="username"
           id="username"
           placeholder="Please enter your name"
+          required
         />
-        <button>Submit</button>
         <label for="age">Age</label>
         <input
           type="number"
           name="age"
           id="age"
           placeholder="Please enter your age"
+          required
         />
         <button type="submit">Submit</button>
       </div>
@@ -56,31 +35,15 @@
     <div id="leaderboard">leaderboard here</div>
 
     <div id="question-container">
-      <button>Previous</button>
-      <!-- <div>Level number</div> -->
-      <button>Next</button>
       <p class="problem"></p>
-      <form class = "answer-form">
-        <input type="text" class = "answer-field" autocomplete="off">
-        <button type="submit">Submit</button>
+      <form class="answer-form">
+        <input type="text" class="answer-field" autocomplete="off" />
+        <button type="submit">Enter</button>
       </form>
-      <p>You need <span class="points-needed">3</span> more points, and are allowed to make <span class = "mistakes-allowed">2</span> more mistakes</p>
-      <!-- <form>
-      <form>
-        <label for="question1">Question number 1</label>
-        <input type="number" name="question1" id="question1" />
-        <button type="submit">Submit</button>
-      </form>
-      <form>
-        <label for="question2">Question number 2</label>
-        <input type="number" name="question2" id="question2" />
-        <button type="submit">Submit</button>
-      </form>
-      <form>
-        <label for="question3">Question number 3</label>
-        <input type="number" name="question3" id="question3" />
-        <button type="submit">Submit</button>
-      </form> -->
+      <p>
+        You need <span class="points-needed">3</span> more points, and are
+        allowed to make <span class="mistakes-allowed">2</span> more mistakes
+      </p>
     </div>
     <div id="image-container">
       <a> <button id="prev">Previous</button> </a>
