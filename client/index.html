@@ -18,14 +18,15 @@
         name="username"
         id="username"
         placeholder="Please enter your name"
+        required
       />
-      <button> Submit </button>
       <label for="age">Age</label>
       <input
         type="number"
         name="age"
         id="age"
         placeholder="Please enter your age"
+        required
       />
       <button type="submit">Submit</button>
     </div>
@@ -37,8 +38,13 @@
       <button>Previous</button>
       <!-- <div>Level number</div> -->
       <button>Next</button>
-
-      <form>
+      <p class="problem"></p>
+      <form class = "answer-form">
+        <input type="text" class = "answer-field" autocomplete="off">
+        <button type="submit">Submit</button>
+      </form>
+      <p>You need <span class="points-needed">3</span> more points, and are allowed to make <span class = "mistakes-allowed">2</span> more mistakes</p>
+      <!-- <form>
         <label for="question1">Question number 1</label>
         <input type="number" name="question1" id="question1" />
         <button type="submit">Submit</button>
@@ -52,7 +58,7 @@
         <label for="question3">Question number 3</label>
         <input type="number" name="question3" id="question3" />
         <button type="submit">Submit</button>
-      </form>
+      </form> -->
     </div>
 
     <div id="image-container">
