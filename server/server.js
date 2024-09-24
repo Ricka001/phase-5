@@ -36,13 +36,6 @@ app.get("/phase", async (req, res) => {
   console.log(query);
 });
 
-//You need a route to READ the database data
-app.get("/phase", async (req, res) => {
-  const query = await db.query(`SELECT * FROM phase`);
-  //we can wrangle the query response to get the rows property only.
-  res.json(query.rows);
-  console.log(query);
-});
 //You need a route to CREATE or ADD new data to the database
 //! In your CREATE route, the request.body is an object that represents the form data coming from your client
 app.post("/phase", function (req, res) {
@@ -54,12 +47,16 @@ app.post("/phase", function (req, res) {
   });
 });
 
-app.get("/phase", async function (req, res) {
-  const query = await db.query(
-    `SELECT * FROM phase WHERE user_name,game_score,age = $1,$2,$3`,
-    [req.body.user - details]
-  ); //when we have a parameter($1, $2, $3), we need to specify the value in square brackets after the query is finished. That value is usually provided by the user when they submit a form --> in the body data of a form (req.body.animal)
-  res.json(query.rows);
+// this will get users and display
+app.post("/get-user-data", async function (req, res) {
+  const { username } = req.body;
+  const query = await db.query(`SELECT * FROM phase WHERE user_name = $1`, [
+    username,
+  ]); //when we have a parameter($1, $2, $3), we need to specify the value in square brackets after the query is finished. That value is usually provided by the user when they submit a form --> in the body data of a form (req.body.animal)
+  if (res.rows.length === 0) {
+    return res.status(404).json({ error: "User not found!" });
+  }
+  res.json(query.rows[0]);
 });
 // db.query(`INSERT INTO phase (user_name,game_score,age) VALUES ($1,$2,$3)`, [
 //   "phase",
