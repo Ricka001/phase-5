@@ -8,20 +8,7 @@ const mistakesAllowed = document.querySelector(".mistakes-allowed");
 
 console.log("Test");
 
-document.getElementById("form").addEventListener("submit", async(e) => {
-    e.preventDefault();
-
-    const username = document.getElementById('username').value;
-try{
-    const response = await fetch('/get-user-data',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username }),
-    });
-}
-
+document.getElementById("form").addEventListener("submit", async(event) => {
 // form.addEventListener("submit", function (event) {
   event.preventDefault();
 

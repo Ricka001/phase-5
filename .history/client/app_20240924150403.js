@@ -19,7 +19,7 @@ try{
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ username }),
-    });
+    })
 }
 
 // form.addEventListener("submit", function (event) {
