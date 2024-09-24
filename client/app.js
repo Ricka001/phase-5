@@ -8,7 +8,7 @@ const mistakesAllowed = document.querySelector(".mistakes-allowed");
 
 console.log("Test");
 
-document.getElementById("form").addEventListener("submit", async(e) => {
+document.getElementById("form").addEventListener("submit", async(e)) => {
     e.preventDefault();
 
     const username = document.getElementById('username').value;
@@ -17,53 +17,12 @@ try{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-        },
+    },
         body: JSON.stringify({ username }),
     });
-}
+};}
 
-// form.addEventListener("submit", function (event) {
-  event.preventDefault();
 
-  const formData = new FormData(form);
-
-  const formValues = Object.fromEntries(formData);
-
-  console.log(formValues);
-});
-
-  const images = [
-    "images/Lions.jpg",
-    "images/Meerkats.jpg",
-    "images/Zebras.jpg",
-  ];
-
-  const firstImage = 0;
-  const lastImage = images.length - 1;
-  let currentImage = 0;
-
-  const nextButton = document.getElementById("next");
-  nextButton.addEventListener("click", () => {
-    const imageTag = document.getElementById("image");
-    currentImage++;
-    if (currentImage >= lastImage) {
-      currentImage = 2;
-    }
-    imageTag.src = images[currentImage];
-  });
-
-  const prevButton = document.getElementById("prev");
-  prevButton.addEventListener("click", () => {
-    const imageTag = document.getElementById("image");
-    currentImage--;
-    if (currentImage <= firstImage) {
-      currentImage = 0;
-      debugger;
-    }
-
-    imageTag.src = images[currentImage];
-  });
-});
 
 let state = {
   score: 0,
@@ -109,6 +68,13 @@ function handleSubmit(event) {
 
 function checkLogic() {}
 
+// formData = new FormData(form);
+
+// const formValues = Object.fromEntries(formData);
+
+// console.log(formValues);
+// });
+
 const username = localStorage.getItem("username");
 
 const age = localStorage.getItem("age");
@@ -116,6 +82,7 @@ const age = localStorage.getItem("age");
 localStorage.setItem("username", username);
 
 localStorage.setItem("age", age);
+
 
 const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
 
