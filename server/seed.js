@@ -8,11 +8,11 @@ game_score INT
 )`);
 // db.query(`INSERT INTO uploads (user_name, content) VALUES ('Anthony','R')`);
 
-db.query(`INSERT INTO phase (user_name,game_score,age) VALUES ($1,$2,$3)`, [
-  "phase",
-  "21",
-  "3",
-]);
+// db.query(`INSERT INTO phase (user_name,game_score,age) VALUES ($1,$2,$3)`, [
+//   "phase",
+//   "21",
+//   "3",
+// ]);
 
 async function queryDatabase() {
   try {
