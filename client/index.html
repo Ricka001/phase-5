@@ -31,6 +31,27 @@
       <button type="submit">Submit</button>
     </div>
   </form>
+=======
+    <form class="form">
+      <div id="user-details">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Please enter your name"
+        />
+        <button>Submit</button>
+        <label for="age">Age</label>
+        <input
+          type="number"
+          name="age"
+          id="age"
+          placeholder="Please enter your age"
+        />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
 
     <div id="leaderboard">leaderboard here</div>
 
@@ -45,6 +66,7 @@
       </form>
       <p>You need <span class="points-needed">3</span> more points, and are allowed to make <span class = "mistakes-allowed">2</span> more mistakes</p>
       <!-- <form>
+      <form>
         <label for="question1">Question number 1</label>
         <input type="number" name="question1" id="question1" />
         <button type="submit">Submit</button>
@@ -60,8 +82,9 @@
         <button type="submit">Submit</button>
       </form> -->
     </div>
-
     <div id="image-container">
+      <a> <button id="prev">Previous</button> </a>
+
       <img
         src="./images/Lions.jpg"
         alt="Lions"
@@ -69,13 +92,9 @@
         width="700"
         height="700"
       />
+
+      <a> <button id="next">Next</button> </a>
     </div>
-
-    <div id="question-container">
-      <button id="prev">Previous</button>
-     <div>Level number</div>  
-     <button id="next">Next</button>
-
     <section>
       <audio src="./audio/Chicken.mp3" class="audio" controls></audio>
     </section>

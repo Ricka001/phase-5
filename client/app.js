@@ -1,3 +1,4 @@
+
 const form = document.querySelector("form");
 const problemElement = document.querySelector(".problem");
 const questionForm = document.querySelector(".answer-form");
@@ -5,10 +6,11 @@ const questionField = document.querySelector(".answer-field");
 const pointsNeeded = document.querySelector(".points-needed");
 const mistakesAllowed = document.querySelector(".mistakes-allowed");
 
-// form.addEventListener("submit", function (event) {
-//   event.preventDefault();
+console.log("Test");
 
-function handleSubmit(event) {
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const formData = new FormData(form);
@@ -53,7 +55,6 @@ function handleSubmit(event) {
   });
 }
 
-//===========
 let state = {
   score: 0,
   wrongAnswers: 0,
@@ -92,3 +93,40 @@ function handleSubmit(event) {
     mistakesAllowed.textContent = 2 - state.wrongAnswers;
   }
 }
+  const username = formData.get("username");
+
+  const age = formData.get("age");
+
+  localStorage.setItem("username", username);
+
+  localStorage.setItem("age", age);
+});
+
+
+const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
+
+const firstImage = 0;
+const lastImage = images.length - 1;
+let currentImage = 0;
+
+const nextButton = document.getElementById("next");
+nextButton.addEventListener("click", () => {
+  const imageTag = document.getElementById("image");
+  currentImage++;
+  if (currentImage >= lastImage) {
+    currentImage = 2;
+  }
+  imageTag.src = images[currentImage];
+});
+
+const prevButton = document.getElementById("prev");
+prevButton.addEventListener("click", () => {
+  const imageTag = document.getElementById("image");
+  currentImage--;
+  if (currentImage <= firstImage) {
+    currentImage = 0;
+    debugger;
+  }
+
+  imageTag.src = images[currentImage];
+});
