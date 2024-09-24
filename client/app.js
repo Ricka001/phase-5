@@ -7,6 +7,8 @@ const pointsNeeded = document.querySelector(".points-needed");
 const mistakesAllowed = document.querySelector(".mistakes-allowed");
 const imageTag = document.getElementById("image");
 const progressBar = document.querySelector(".progress-inner");
+const endMessage = document.querySelector(".end-message");
+const resetButton = document.querySelector(".reset-button");
 
 console.log("Test");
 
@@ -80,8 +82,8 @@ function handleSubmit(event) {
 function checkLogic() {
   //if you won -- submit score to the db??
   if (state.score === 3) {
-    alert("Congrats! You won.");
-    resetGame();
+    endMessage.textContent = "Congrats! You won.";
+    document.body.classList.add("overlay-is-open");
   }
 
   //amend the above to if the score = 3, then scroll to next level, then:
@@ -92,12 +94,14 @@ function checkLogic() {
 
   //if you lost -- submit score to the db??
   if (state.wrongAnswers === 3) {
-    alert("Sorry, you lost.");
-    resetGame();
+    endMessage.textContent = "Sorry, you lost.";
+    document.body.classList.add("overlay-is-open");
   }
 }
+resetButton.addEventListener("click", resetGame);
 
 function resetGame() {
+  document.body.classList.remove("overlay-is-open");
   state.currentProblem = 0;
   state.score = 0;
   state.wrongAnswers = 0;
