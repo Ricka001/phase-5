@@ -1,49 +1,47 @@
+console.log("Test");
+
 const form = document.querySelector("form");
 
-// form.addEventListener("submit", function (event) {
-//   event.preventDefault();
-
-function handleSubmit(event) {
+form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const formData = new FormData(form);
 
-  const formValues = Object.fromEntries(formData);
+  const username = formData.get("username");
 
-  console.log(formValues);
+  const age = formData.get("age");
 
-  setupCounter(document.querySelector("#counter"));
-  console.log("Test");
+  localStorage.setItem("username", username);
 
-  const images = [
-    "images/Lions.jpg",
-    "images/Meerkats.jpg",
-    "images/Zebras.jpg",
-  ];
+  localStorage.setItem("age", age);
+});
 
-  const firstImage = 0;
-  const lastImage = images.length - 1;
-  let currentImage = 0;
+// ===========================/
 
-  const nextButton = document.getElementById("next");
-  nextButton.addEventListener("click", () => {
-    const imageTag = document.getElementById("image");
-    currentImage++;
-    if (currentImage >= lastImage) {
-      currentImage = 2;
-    }
-    imageTag.src = images[currentImage];
-  });
+const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
 
-  const prevButton = document.getElementById("prev");
-  prevButton.addEventListener("click", () => {
-    const imageTag = document.getElementById("image");
-    currentImage--;
-    if (currentImage <= firstImage) {
-      currentImage = 0;
-      debugger;
-    }
+const firstImage = 0;
+const lastImage = images.length - 1;
+let currentImage = 0;
 
-    imageTag.src = images[currentImage];
-  });
-}
+const nextButton = document.getElementById("next");
+nextButton.addEventListener("click", () => {
+  const imageTag = document.getElementById("image");
+  currentImage++;
+  if (currentImage >= lastImage) {
+    currentImage = 2;
+  }
+  imageTag.src = images[currentImage];
+});
+
+const prevButton = document.getElementById("prev");
+prevButton.addEventListener("click", () => {
+  const imageTag = document.getElementById("image");
+  currentImage--;
+  if (currentImage <= firstImage) {
+    currentImage = 0;
+    debugger;
+  }
+
+  imageTag.src = images[currentImage];
+});
