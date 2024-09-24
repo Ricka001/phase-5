@@ -8,21 +8,23 @@ const mistakesAllowed = document.querySelector(".mistakes-allowed");
 
 console.log("Test");
 
-document.getElementById("form").addEventListener("submit", async(e)) => {
-    e.preventDefault();
+document.getElementById("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const username = document.getElementById('username').value;
-try{
-    const response = await fetch('/get-user-data',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-    },
-        body: JSON.stringify({ username }),
+  username = document.getElementById("username").value;
+  try {
+    const res = await fetch("/get-user-data", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username }),
     });
-};}
-
-
+    if (!res.ok) {
+      throw new Error("Network response failed!");
+    }
+  } catch (error) {
+    console.error("problem with fetch", error);
+  }
+});
 
 let state = {
   score: 0,
@@ -82,7 +84,6 @@ const age = localStorage.getItem("age");
 localStorage.setItem("username", username);
 
 localStorage.setItem("age", age);
-
 
 const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
 
