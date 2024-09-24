@@ -58,6 +58,8 @@ let state = {
 function updateProblem() {
   state.currentProblem = generateProblem();
   problemElement.innerHTML = `${state.currentProblem.question1}`;
+  questionField.value = "";
+  questionField.focus();
 }
 
 updateProblem();
@@ -83,6 +85,7 @@ function handleSubmit(event) {
   if (parseInt(questionField.value, 10) === correctAnswer) {
     state.score++;
     pointsNeeded.textContent = 3 - state.score;
+    updateProblem();
   } else {
     state.wrongAnswers++;
     mistakesAllowed.textContent = 2 - state.wrongAnswers;
