@@ -20,6 +20,6 @@ export const db = new pg.Pool({
   connectionString: dbConnectionString,
 });
 
-app.get("/review", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "you are looking tut! tut!" });
 });
