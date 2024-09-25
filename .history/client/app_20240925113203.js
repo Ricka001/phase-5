@@ -16,12 +16,11 @@ document.getElementById("form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   let username = document.getElementById("username").value;
-  let userage = document.getElementById("age").value;
   try {
     const res = await fetch("http://localhost:8080/get-user-data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, userage }),
+      body: JSON.stringify({ username }),
     });
     if (!res.ok) {
       throw new Error("Network response failed!");

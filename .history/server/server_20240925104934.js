@@ -49,14 +49,13 @@ app.post("/phase", function (req, res) {
 
 // this will get users and display
 app.post("/get-user-data", async function (req, res) {
-  const { username, userage } = req.body;
-  const query = await db.query(
-    `INSERT INTO phase (user_name,age) VALUES ($1,$2) RETURNING *`,
-    [username, userage]
-  ); //when we have a parameter($1, $2, $3), we need to specify the value in square brackets after the query is finished. That value is usually provided by the user when they submit a form --> in the body data of a form (req.body.animal)
-  //   if (res.rows.length === 0) {
-  //     return res.status(404).json({ error: "User not found!" });
-  //   }
+  const { username } = req.body;
+  const query = await db.query(`SELECT * FROM phase WHERE user_name = $1`, [
+    username,
+  ]); //when we have a parameter($1, $2, $3), we need to specify the value in square brackets after the query is finished. That value is usually provided by the user when they submit a form --> in the body data of a form (req.body.animal)
+  if (res.rows.length === 0) {
+    return res.status(404).json({ error: "User not found!" });
+  }
   res.json(query.rows[0]);
 });
 // db.query(`INSERT INTO phase (user_name,game_score,age) VALUES ($1,$2,$3)`, [
