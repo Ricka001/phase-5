@@ -43,13 +43,13 @@ let questionArray = [
   "How many zebras are in this image?",
 ];
 
-let answers = [6, 13, 17];
+let answers = [6, 13, 18];
 
 const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
 
 function updateProblem() {
   problemElement.textContent = questionArray[gameData.currentProblem];
-  imageTag.src = images[state.currentProblem];
+  imageTag.src = images[gameData.currentProblem];
   questionField.value = "";
   questionField.focus();
 }
@@ -64,6 +64,8 @@ function handleSubmit(event) {
   const userAnswer = parseInt(questionField.value, 10); // Convert answer to a number
   const correctAnswer = answers[gameData.currentProblem];
 
+  const stringifiedData = JSON.stringify(gameData.score);
+
   if (userAnswer === correctAnswer) {
     gameData.score++;
     pointsNeeded.textContent = 3 - gameData.score;
@@ -72,7 +74,7 @@ function handleSubmit(event) {
     gameData.currentProblem =
       (gameData.currentProblem + 1) % questionArray.length;
     updateProblem();
-    //update the local storage
+    localStorage.setItem("gameScore", stringifiedData);
   } else {
     gameData.wrongAnswers++;
     mistakesAllowed.textContent = 2 - gameData.wrongAnswers;
@@ -80,6 +82,11 @@ function handleSubmit(event) {
     questionField.focus();
   }
   checkLogic();
+
+  const retrievedData = localStorage.getItem("gameScore");
+  const gameScore = JSON.parse(retrievedData);
+  console.log(gameScore);
+  return gameScore;
 }
 
 function checkLogic() {
@@ -104,8 +111,7 @@ function checkLogic() {
 resetButton.addEventListener("click", resetGame);
 
 function resetGame() {
-  //value from local storage gets sent to local storge
-  //clear the local storage
+  //value from local storage gets sent to db
   document.body.classList.remove("overlay-is-open");
   gameData.currentProblem = 0;
   gameData.score = 0;
@@ -114,6 +120,7 @@ function resetGame() {
   mistakesAllowed.textContent = 2;
   updateProblem();
   renderProgressBar();
+  localStorage.clear();
 }
 
 function renderProgressBar() {
