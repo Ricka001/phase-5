@@ -183,6 +183,10 @@ dogdropZone.addEventListener("drop", function (event) {
   dogdropZone.appendChild(dogCard);
 });
 
+
+
+// The code below should have worked as a pop-up message once finished button is clicked but it isnt working //
+
 // let popup = document.getElementById("popup");
 
 // function openPopup() {
@@ -193,4 +197,7 @@ dogdropZone.addEventListener("drop", function (event) {
 //   popup.classList.remove("open-popup");
 // }
 
+
 //====================
+
+
