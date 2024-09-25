@@ -159,8 +159,6 @@ chickendropZone.addEventListener("drop", function (event) {
   chickendropZone.appendChild(chickenCard);
 });
 
-// ===============
-
 const cowCard = document.getElementById("cow-card");
 const cowdropZone = document.getElementById("cow-drop-zone");
 cowCard.addEventListener("dragstart", function (event) {
@@ -172,8 +170,6 @@ cowdropZone.addEventListener("dragover", function (event) {
 cowdropZone.addEventListener("drop", function (event) {
   cowdropZone.appendChild(cowCard);
 });
-
-// ==============
 
 const dogCard = document.getElementById("dog-card");
 const dogdropZone = document.getElementById("dog-drop-zone");
@@ -187,14 +183,13 @@ dogdropZone.addEventListener("drop", function (event) {
   dogdropZone.appendChild(dogCard);
 });
 
-//====================
+// The code below should have worked as a pop-up message once finished button is clicked but it isnt working //
+// let popup = document.getElementById("popup");
 
-let popup = document.getElementById("popup");
+// function openPopup() {
+//   popup.classList.add("open-popup");
+// }
 
-function openPopup() {
-  popup.classList.add("open-popup");
-}
-
-function closePopup() {
-  popup.classList.remove("open-popup");
-}
+// function closePopup() {
+//   popup.classList.remove("open-popup");
+// }

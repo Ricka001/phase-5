@@ -91,6 +91,11 @@
   clear: both;
 }
 
+.container {
+  float: left;
+  width: 33.3%;
+}
+
 #chicken-card {
   width: 300px;
   height: 300px;
@@ -123,6 +128,7 @@
   position: relative;
   top: 50%;
   left: 50%;
+  align-items: center;
   transform: translate(-50%, -50%);
   visibility: hidden;
 }
