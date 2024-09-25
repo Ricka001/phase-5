@@ -15,13 +15,12 @@ console.log("Test");
 document.getElementById("form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  let username = document.getElementById("username").value;
-  let userage = document.getElementById("age").value;
+  username = document.getElementById("username").value;
   try {
     const res = await fetch("http://localhost:8080/get-user-data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, userage }),
+      body: JSON.stringify({ username }),
     });
     if (!res.ok) {
       throw new Error("Network response failed!");
@@ -31,7 +30,7 @@ document.getElementById("form").addEventListener("submit", async (e) => {
   }
 });
 
-let gameData = {
+let state = {
   score: 0,
   wrongAnswers: 0,
   currentProblem: 0,
@@ -48,7 +47,7 @@ let answers = [6, 13, 17];
 const images = ["images/Lions.jpg", "images/Meerkats.jpg", "images/Zebras.jpg"];
 
 function updateProblem() {
-  problemElement.textContent = questionArray[gameData.currentProblem];
+  problemElement.textContent = questionArray[state.currentProblem];
   imageTag.src = images[state.currentProblem];
   questionField.value = "";
   questionField.focus();
@@ -62,20 +61,18 @@ function handleSubmit(event) {
   event.preventDefault();
 
   const userAnswer = parseInt(questionField.value, 10); // Convert answer to a number
-  const correctAnswer = answers[gameData.currentProblem];
+  const correctAnswer = answers[state.currentProblem];
 
   if (userAnswer === correctAnswer) {
-    gameData.score++;
-    pointsNeeded.textContent = 3 - gameData.score;
+    state.score++;
+    pointsNeeded.textContent = 3 - state.score;
     renderProgressBar();
     // Go to the next problem
-    gameData.currentProblem =
-      (gameData.currentProblem + 1) % questionArray.length;
+    state.currentProblem = (state.currentProblem + 1) % questionArray.length;
     updateProblem();
-    //update the local storage
   } else {
-    gameData.wrongAnswers++;
-    mistakesAllowed.textContent = 2 - gameData.wrongAnswers;
+    state.wrongAnswers++;
+    mistakesAllowed.textContent = 2 - state.wrongAnswers;
     questionField.value = "";
     questionField.focus();
   }
@@ -84,7 +81,7 @@ function handleSubmit(event) {
 
 function checkLogic() {
   //if you won -- submit score to the db??
-  if (gameData.score === 3) {
+  if (state.score === 3) {
     endMessage.textContent = "Congrats! You won.";
     document.body.classList.add("overlay-is-open");
   }
@@ -96,7 +93,7 @@ function checkLogic() {
   // }
 
   //if you lost -- submit score to the db??
-  if (gameData.wrongAnswers === 3) {
+  if (state.wrongAnswers === 3) {
     endMessage.textContent = "Sorry, you lost.";
     document.body.classList.add("overlay-is-open");
   }
@@ -104,12 +101,10 @@ function checkLogic() {
 resetButton.addEventListener("click", resetGame);
 
 function resetGame() {
-  //value from local storage gets sent to local storge
-  //clear the local storage
   document.body.classList.remove("overlay-is-open");
-  gameData.currentProblem = 0;
-  gameData.score = 0;
-  gameData.wrongAnswers = 0;
+  state.currentProblem = 0;
+  state.score = 0;
+  state.wrongAnswers = 0;
   pointsNeeded.textContent = 3;
   mistakesAllowed.textContent = 2;
   updateProblem();
@@ -117,7 +112,7 @@ function resetGame() {
 }
 
 function renderProgressBar() {
-  progressBar.style.transform = `scaleX(${gameData.score / 6})`;
+  progressBar.style.transform = `scaleX(${state.score / 6})`;
 }
 
 // formData = new FormData(form);
