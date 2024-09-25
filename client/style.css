@@ -50,7 +50,7 @@
   width: 300px;
   height: 300px;
   margin-left: 200px;
-  margin-top: 1em;
+  margin-top: 3em;
   background-color: aliceblue;
   border: dotted;
   columns: 3 auto;
@@ -60,7 +60,7 @@
   width: 300px;
   height: 300px;
   margin-left: 200px;
-  margin-top: 1em;
+  margin-top: 3em;
   background-color: aliceblue;
   border: dotted;
   columns: 3 auto;
@@ -70,7 +70,7 @@
   width: 300px;
   height: 300px;
   margin-left: 200px;
-  margin-top: 1em;
+  margin-top: 3em;
   background-color: aliceblue;
   border: dotted;
   columns: 3 auto;
@@ -89,6 +89,10 @@
   content: "";
   display: table;
   clear: both;
+}
+.container {
+  float: left;
+  width: 33.3%;
 }
 
 #chicken-card {
