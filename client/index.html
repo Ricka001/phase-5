@@ -66,7 +66,7 @@
         height="700"
       />
     </div>
-    <div class="audio-container">
+    <!-- <div class="audio-container">
       <section>
         <audio src="./audio/Chicken.mp3" class="audio" controls></audio>
       </section>
@@ -76,14 +76,88 @@
       <section>
         <audio src="./audio/Dog.mp3" class="audio" controls></audio>
       </section>
-    </div>
+    </div> -->
 
-    <div class="overlay">
-      <div class="overlay-inner">
-        <p class="end-message"></p>
-        <button class="reset-button">Start Over</button>
+   
+
+    <div class="audio-row">
+      <div class="audio-column">
+        <audio src="./audio/Chicken.mp3" class="audio" width="100%" controls></audio>
       </div>
-    </div>
+      <div class="audio-column">
+        <audio src="./audio/Cow.mp3" class="audio" width="100%" controls></audio>
+      </div>
+      <div class="audio-column">
+        <audio src="./audio/Dog.mp3" class="audio" width="100%" controls></audio>
+      
+      </div>
+
+
+
+      
+
+       <div class="dropzone-row"> 
+
+        <div class="dropzone-column"
+          class="drop-zone" id="chicken-drop-zone" width="300px" height="300px"></div>
+
+      <div class="dropzone-column" id="cow-drop-zone" id="cow-drop" width="300px" height="300px"></div>
+
+      <div class="dropzone-column" id="dog-drop-zone" id="dog-drop-zone" width="300px" height="300px" ></div> 
+
+</div>
+      <!-- <div class="container-box"> -->
+
+
+
+
+
+      <div class="container" >
+
+        <div class="container-column" id="dog-card" draggable="true"> 
+          <img
+           src="./images/Dog.jpg" 
+           alt="Dog" 
+           width="300px"
+           height="300px" 
+           class="box">
+              </div>
+
+        <div class="container-column" id="chicken-card" draggable="true">   
+          <img
+          src="./images/Chicken.jpg"
+          alt="Chicken"
+          width="300px"
+          height="300px"
+          class="box"> 
+        </div>
+      
+          <div class="container-column" id="cow-card" draggable="true">   
+            <img 
+            src="./images/Cow.jpg" 
+            alt="Cow" 
+            width="300px"
+            height="300px"
+            class="box"> 
+            
+          </div>
+
+          <div class="finished-drag-container"> 
+            <button type="submit" class="drag-button" onclick="openPopup()"> Finished </button>
+            <div class="popup" id="popup">
+                <h2> Congratulation  Your Correct!!!</h2>
+                <button type="button" onclick="closePopup()">OK</div>
+            </div>
+            </div>    
+
+            <div class="overlay">
+              <div class="overlay-inner">
+                <p class="end-message"></p>
+                <button class="reset-button">Start Over</button>
+              </div>
+            </div>
+
+
   </body>
   <footer>Created by Anthony, Kat, Khadija & Serdrick</footer>
 </html>

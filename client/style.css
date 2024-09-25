@@ -34,6 +34,111 @@
   transition: transform 0.4s ease-out;
 }
 
+/*============*/
+.audio-column {
+  float: left;
+  width: 33.3%;
+}
+
+.audio-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#chicken-drop-zone {
+  width: 300px;
+  height: 300px;
+  margin-left: 200px;
+  margin-top: 1em;
+  background-color: aliceblue;
+  border: dotted;
+  columns: 3 auto;
+}
+
+#cow-drop-zone {
+  width: 300px;
+  height: 300px;
+  margin-left: 200px;
+  margin-top: 1em;
+  background-color: aliceblue;
+  border: dotted;
+  columns: 3 auto;
+}
+
+#dog-drop-zone {
+  width: 300px;
+  height: 300px;
+  margin-left: 200px;
+  margin-top: 1em;
+  background-color: aliceblue;
+  border: dotted;
+  columns: 3 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dropzone-column {
+  float: left;
+  width: 33.3%;
+}
+
+.dropzone-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#chicken-card {
+  width: 300px;
+  height: 300px;
+
+  position: relative;
+  flex-direction: row;
+}
+
+#dog-card {
+  width: 300px;
+  height: 300px;
+  align-items: right;
+  grid-row: 3 auto;
+
+  position: relative;
+  flex-direction: row;
+}
+
+#cow-card {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  flex-direction: row;
+}
+
+.popup {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+.open-popup {
+  visibility: visible;
+  top: 50%;
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* =========== */
+
 .overlay {
   position: fixed;
   top: 0;

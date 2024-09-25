@@ -144,3 +144,57 @@ async function completedData() {
     console.error("problem with fetch", error);
   }
 }
+
+//=================
+
+const chickenCard = document.getElementById("chicken-card");
+const chickendropZone = document.getElementById("chicken-drop-zone");
+chickenCard.addEventListener("dragstart", function (event) {
+  console.log(event);
+});
+chickendropZone.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+chickendropZone.addEventListener("drop", function (event) {
+  chickendropZone.appendChild(chickenCard);
+});
+
+// ===============
+
+const cowCard = document.getElementById("cow-card");
+const cowdropZone = document.getElementById("cow-drop-zone");
+cowCard.addEventListener("dragstart", function (event) {
+  console.log(event);
+});
+cowdropZone.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+cowdropZone.addEventListener("drop", function (event) {
+  cowdropZone.appendChild(cowCard);
+});
+
+// ==============
+
+const dogCard = document.getElementById("dog-card");
+const dogdropZone = document.getElementById("dog-drop-zone");
+dogCard.addEventListener("dragstart", function (event) {
+  console.log(event);
+});
+dogdropZone.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+dogdropZone.addEventListener("drop", function (event) {
+  dogdropZone.appendChild(dogCard);
+});
+
+//====================
+
+let popup = document.getElementById("popup");
+
+function openPopup() {
+  popup.classList.add("open-popup");
+}
+
+function closePopup() {
+  popup.classList.remove("open-popup");
+}
