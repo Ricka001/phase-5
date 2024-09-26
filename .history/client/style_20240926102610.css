@@ -4,13 +4,6 @@ h1 {
   align-items: center;
 }
 
-#image-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding-top: 10px;
-}
-
 .rows-one {
   display: flex;
   justify-content: space-around;
@@ -54,6 +47,7 @@ h1 {
   transform: scaleX(0);
   transform-origin: center left;
   transition: transform 0.4s ease-out;
+  border: gray solid 5px;
 }
 
 /*============*/

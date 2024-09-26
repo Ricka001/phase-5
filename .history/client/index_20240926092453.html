@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./app.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Phase 5</title>
+  </head>
+  <body>
+    <h1>Phase 5</h1>
+    <form id="form">
+      <div id="user-details">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Please enter your name"
+          required
+        />
+        <label for="age">Age</label>
+        <input
+          type="number"
+          name="age"
+          id="age"
+          placeholder="Please enter your age"
+          required
+        />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <div id="leaderboard">leaderboard here</div>
+
+    <div id="question-container">
+      <p class="problem"></p>
+      <form id="answer-form">
+        <input type="text" class="answer-field" autocomplete="off" />
+        <button type="submit">Enter</button>
+      </form>
+      <p>
+        You need <span class="points-needed">7</span> more points, and are
+        allowed to make <span class="mistakes-allowed">2</span> more mistakes
+      </p>
+      <div class="progress">
+        <div class="boxes">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="progress-inner"></div>
+      </div>
+    </div>
+    <div id="image-container">
+      <img
+        src="./images/Lions.jpg"
+        alt="Lions"
+        id="image"
+        width="700"
+        height="700"
+      />
+    </div>
+
+    <div class="audio-row">
+      <div class="audio-column">
+        <audio
+          src="./audio/Chicken.mp3"
+          class="audio"
+          width="100%"
+          controls
+        ></audio>
+      </div>
+      <div class="audio-column">
+        <audio
+          src="./audio/Cow.mp3"
+          class="audio"
+          width="100%"
+          controls
+        ></audio>
+      </div>
+      <div class="audio-column">
+        <audio
+          src="./audio/Dog.mp3"
+          class="audio"
+          width="100%"
+          controls
+        ></audio>
+      </div>
+
+      <div class="dropzone-row">
+        <div
+          class="dropzone-column"
+          class="drop-zone"
+          id="chicken-drop-zone"
+          width="300px"
+          height="300px"
+        ></div>
+
+        <div
+          class="dropzone-column"
+          id="cow-drop-zone"
+          id="cow-drop"
+          width="300px"
+          height="300px"
+        ></div>
+
+        <div
+          class="dropzone-column"
+          id="dog-drop-zone"
+          id="dog-drop-zone"
+          width="300px"
+          height="300px"
+        ></div>
+      </div>
+
+      <div class="container">
+        <div class="container-column" id="dog-card" draggable="true">
+          <img src="./images/Dog.jpg" alt="Dog" width="300px" height="300px" />
+        </div>
+      </div>
+
+      <div class="container-column" id="chicken-card" draggable="true">
+        <img
+          src="./images/Chicken.jpg"
+          alt="Chicken"
+          width="300px"
+          height="300px"
+        />
+      </div>
+
+      <div class="container-column" id="cow-card" draggable="true">
+        <img src="./images/Cow.jpg" alt="Cow" width="300px" height="300px" />
+      </div>
+
+      <!-- <div class="finished-container"> 
+            </div>
+<!--on console there is reference error: openPopup not defined at onclickon html for the below code-->
+      <!-- <div class="finished-container"> 
+            <button type="submit" class="drag-button" onclick="openPopup()"> Finished </button>
+            <div class="popup" id="popup">
+                <h2> Congratulation  Your Correct!!!</h2>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+            </div>     -->
+    </div>
+
+    <!-- ====================== -->
+
+    <div class="overlay">
+      <div class="overlay-inner">
+        <p class="end-message"></p>
+        <button class="reset-button">Start Over</button>
+      </div>
+    </div>
+  </body>
+  <footer>Created by Anthony, Kat, Khadija & Serdrick</footer>
+</html>

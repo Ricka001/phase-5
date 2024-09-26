@@ -4,13 +4,6 @@ h1 {
   align-items: center;
 }
 
-#image-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding-top: 10px;
-}
-
 .rows-one {
   display: flex;
   justify-content: space-around;
@@ -48,7 +41,7 @@ h1 {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100%;
+  width: 125%;
   background-color: rgb(79, 208, 79);
   opacity: 0.57;
   transform: scaleX(0);
