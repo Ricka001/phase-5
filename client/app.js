@@ -119,6 +119,7 @@ function resetGame() {
   updateProblem();
   renderProgressBar();
   localStorage.clear();
+  renderLeaderboard();
 }
 
 function renderProgressBar() {
@@ -146,8 +147,9 @@ async function completedData() {
 }
 
 async function renderLeaderboard() {
-  const res = await fetch("http://localhost:8080/phase");
+  const res = await fetch("http://localhost:8080/phase-five");
   const boardScores = await res.json();
+
   boardScores.forEach((phase) => {
     const scoreElement = document.createElement("div");
     scoreElement.classList.add("boardScore");
@@ -158,12 +160,18 @@ async function renderLeaderboard() {
     const ageElement = document.createElement("p");
     ageElement.textContent = `Age: ${phase.age}`;
 
-    scoreElement = document.createElement("p");
-    scoreElement.textContent = `Score: ${phase.game_score}`;
+    const scoreElementScore = document.createElement("p");
+    scoreElementScore.textContent = `Score: ${phase.game_score}`;
 
     scoreElement.appendChild(nameElement);
     scoreElement.appendChild(ageElement);
+
     scoreElement.appendChild(scoreElement);
+
+    scoreElement.appendChild(scoreElementScore);
+
+    leaderboard.appendChild(scoreElement);
+
   });
 }
 
