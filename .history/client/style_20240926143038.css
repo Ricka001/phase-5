@@ -64,6 +64,9 @@ h1 {
   transition: 0.7s;
 }
 .reset-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: aqua;
 }
 

@@ -59,12 +59,8 @@ h1 {
   background-color: white;
 }
 
-.reset-button:hover {
-  background-color: #219ebc;
-  transition: 0.7s;
-}
 .reset-button {
-  color: aqua;
+  background-color: white;
 }
 
 .s-button:hover {

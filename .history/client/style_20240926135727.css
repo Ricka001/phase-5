@@ -35,16 +35,6 @@ h1 {
   padding-top: 10px;
 }
 
-#username {
-  background-color: white;
-}
-#age {
-  background-color: white;
-}
-#answer {
-  background-color: white;
-}
-
 .rows-one {
   display: flex;
   justify-content: space-around;
@@ -59,21 +49,13 @@ h1 {
   background-color: white;
 }
 
-.reset-button:hover {
-  background-color: #219ebc;
-  transition: 0.7s;
-}
-.reset-button {
-  color: aqua;
-}
-
 .s-button:hover {
   background-color: #219ebc;
   transition: 0.7s;
 }
 
 .s-button {
-  color: aqua;
+  color: white;
 }
 
 #image {
@@ -203,6 +185,28 @@ h1 {
   flex-direction: row;
 }
 
+.popup {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+.open-popup {
+  visibility: visible;
+  top: 50%;
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: bold;
+  padding: 10px;
+}
+
 /* =========== */
 
 .overlay {
@@ -212,8 +216,6 @@ h1 {
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.82);
-  color: white;
-  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;

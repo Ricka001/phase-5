@@ -11,17 +11,18 @@
 </head>
 
 <body>
-  <h1>Phase 5</h1>
+
   <div class="rows-one">
+    <h1>Phase 5</h1>
     <div class="columns-one">
 
       <form id="form">
         <div id="user-details">
           <label for="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="Name" required />
+          <input type="text" name="username" id="username" placeholder="Please enter your name" required />
           <label for="age">Age</label>
-          <input type="number" name="age" id="age" placeholder="Age" required />
-          <button type="submit" class="s-button">Submit</button>
+          <input type="number" name="age" id="age" placeholder="Please enter your age" required />
+          <button type="submit">Submit</button>
         </div>
       </form>
 
@@ -30,8 +31,8 @@
       <div id="question-container">
         <p class="problem"></p>
         <form id="answer-form">
-          <input type="text" class="answer-field" autocomplete="off" placeholder="Answer" id="answer" />
-          <button type="submit" class="s-button">Enter</button>
+          <input type="text" class="answer-field" autocomplete="off" />
+          <button type="submit">Enter</button>
         </form>
         <p>
           You need <span class="points-needed">7</span> more points, and are
@@ -51,11 +52,10 @@
         </div>
       </div>
     </div>
-    <div id="leaderboard">Scoreboard!
-    </div>
+    <div id="leaderboard">leaderboard here</div>
   </div>
   <div id="image-container">
-    <img src="./images/Lions.jpg" alt="Lions" id="image" width="800" height="600" />
+    <img src="./images/Lions.jpg" alt="Lions" id="image" width="1000" height="1000" />
   </div>
 
   <div class="audio-row">
@@ -92,9 +92,19 @@
     </div>
 
 
+    <!-- <div class="finished-container"> 
+
+      <!-- <div class="finished-container" -->
 
   </div>
-
+  <!--on console there is reference error: openPopup not defined at onclickon html for the below code-->
+  <!-- <div class="finished-container"> 
+            <button type="submit" class="drag-button" onclick="openPopup()"> Finished </button>
+            <div class="popup" id="popup">
+                <h2> Congratulation  Your Correct!!!</h2>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+            </div>     -->
   </div>
 
   <!-- ====================== -->

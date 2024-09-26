@@ -38,12 +38,6 @@ h1 {
 #username {
   background-color: white;
 }
-#age {
-  background-color: white;
-}
-#answer {
-  background-color: white;
-}
 
 .rows-one {
   display: flex;
@@ -57,14 +51,6 @@ h1 {
   height: 200px;
   width: 200px;
   background-color: white;
-}
-
-.reset-button:hover {
-  background-color: #219ebc;
-  transition: 0.7s;
-}
-.reset-button {
-  color: aqua;
 }
 
 .s-button:hover {
@@ -212,8 +198,6 @@ h1 {
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.82);
-  color: white;
-  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;

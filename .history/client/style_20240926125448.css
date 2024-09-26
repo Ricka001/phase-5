@@ -2,24 +2,21 @@
 /* Secondary color  */
 /* third color gray */
 
-/* hover color #219ebc */
-
 * {
-  background-color: #003049;
-}
-
-#form,
-#question-container {
-  color: #f77f00;
+  background-color: #007a78;
 }
 h1 {
-  margin-right: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  right: 50%;
   transform: translate(50%, -50%);
   text-transform: uppercase;
   font-family: verdana;
-  font-size: 50px;
+  font-size: 12em;
   font-weight: 700;
-  color: #eae2b7;
+  color: #f5f5f5;
   text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191,
     1px 4px 1px #919191, 1px 5px 1px #919191, 1px 6px 1px #919191,
     1px 7px 1px #919191, 1px 8px 1px #919191, 1px 9px 1px #919191,
@@ -35,16 +32,6 @@ h1 {
   padding-top: 10px;
 }
 
-#username {
-  background-color: white;
-}
-#age {
-  background-color: white;
-}
-#answer {
-  background-color: white;
-}
-
 .rows-one {
   display: flex;
   justify-content: space-around;
@@ -52,28 +39,7 @@ h1 {
 
 #leaderboard {
   border: gray solid 5px;
-  color: #f77f00;
-  overflow: scroll;
-  height: 200px;
-  width: 200px;
-  background-color: white;
-}
-
-.reset-button:hover {
-  background-color: #219ebc;
-  transition: 0.7s;
-}
-.reset-button {
-  color: aqua;
-}
-
-.s-button:hover {
-  background-color: #219ebc;
-  transition: 0.7s;
-}
-
-.s-button {
-  color: aqua;
+  color: #ffc745;
 }
 
 #image {
@@ -105,7 +71,7 @@ h1 {
   top: 0;
   bottom: 0;
   width: 100%;
-  background-color: #2a9d8f;
+  background-color: rgb(79, 208, 79);
   opacity: 0.57;
   transform: scaleX(0);
   transform-origin: center left;
@@ -203,6 +169,28 @@ h1 {
   flex-direction: row;
 }
 
+.popup {
+  width: 400px;
+  background: #fff;
+  border-radius: 6px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+.open-popup {
+  visibility: visible;
+  top: 50%;
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: bold;
+  padding: 10px;
+}
+
 /* =========== */
 
 .overlay {
@@ -212,8 +200,6 @@ h1 {
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.82);
-  color: white;
-  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
