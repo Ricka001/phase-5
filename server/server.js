@@ -22,14 +22,14 @@ export const db = new pg.Pool({
   connectionString: dbConnectionString,
 });
 
-app.get("/phase", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "you are looking tut! tut!" });
 });
 
 //I need to set up a root route
 //You need two routes minimum
 // end point
-app.get("/phase", async (req, res) => {
+app.get("/phase-five", async (req, res) => {
   const query = await db.query(`SELECT * FROM phase`);
   //we can wrangle the query response to get the rows property only.
   res.json(query.rows);
@@ -38,7 +38,7 @@ app.get("/phase", async (req, res) => {
 
 //You need a route to CREATE or ADD new data to the database
 //! In your CREATE route, the request.body is an object that represents the form data coming from your client
-app.post("/phase", function (req, res) {
+app.post("/phase-five", function (req, res) {
   const bodyData = req.body;
   console.log(bodyData);
   res.json({
