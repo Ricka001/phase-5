@@ -133,7 +133,7 @@ async function completedData() {
 
   try {
     console.log(username);
-    const res = await fetch("https://phase-5-olau.onrender.com/phase-five", {
+    const res = await fetch("https://phase-5-olau.onrender.com/get-user-data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, age, score }),
@@ -147,7 +147,7 @@ async function completedData() {
 }
 
 async function renderLeaderboard() {
-  const res = await fetch("https://phase-5-olau.onrender.com/get-user-data");
+  const res = await fetch("https://phase-5-olau.onrender.com/phase-five");
   const boardScores = await res.json();
 
   boardScores.forEach((phase) => {
