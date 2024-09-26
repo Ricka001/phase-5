@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 //I need to set up a port for my app to listen
-const PORT = 10000;
+const PORT = 8080;
 app.listen(PORT, () => {
   console.log(`listening to ${PORT}`);
 });
