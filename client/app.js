@@ -145,6 +145,12 @@ async function completedData() {
   }
 }
 
+async function renderLeaderboard() {
+  const res = await fetch("http://localhost:8080/phase");
+  const 
+
+}
+
 //=================
 
 const chickenCard = document.getElementById("chicken-card");
