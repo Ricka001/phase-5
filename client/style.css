@@ -77,7 +77,7 @@ h1 {
 }
 
 #image {
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 
 .audio {
@@ -112,55 +112,49 @@ h1 {
   transition: transform 0.4s ease-out;
 }
 
-/*============*/
-/* .audio-column {
+/*==============================*/
+.audio-column {
   float: left;
-  width: 33.3%;
 }
-
 .audio-row::after {
   content: "";
   display: table;
   clear: both;
 }
+.audio-row {
+  margin-top: 3em;
+}
 
 #chicken-drop-zone {
   width: 300px;
   height: 300px;
-  margin-left: 200px;
-  margin-top: 3em;
+  margin-left: 25px;
+  margin-top: 1em;
   background-color: aliceblue;
   border: dotted;
   columns: 3 auto;
 }
-
 #cow-drop-zone {
   width: 300px;
   height: 300px;
-  margin-left: 200px;
-  margin-top: 3em;
+  margin-left: 25px;
+  margin-top: 1em;
   background-color: aliceblue;
   border: dotted;
   columns: 3 auto;
 }
-
 #dog-drop-zone {
   width: 300px;
   height: 300px;
-  margin-left: 200px;
-  margin-top: 3em;
+  margin-left: 25px;
+  margin-top: 1em;
   background-color: aliceblue;
   border: dotted;
   columns: 3 auto;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .dropzone-column {
   float: left;
-  width: 33.3%;
 }
 
 .dropzone-row::after {
@@ -168,20 +162,13 @@ h1 {
   display: table;
   clear: both;
 }
-.container {
+.container-column {
   float: left;
-  width: 33.3%;
-}
-
-.container {
-  float: left;
-  width: 33.3%;
 }
 
 #chicken-card {
   width: 300px;
   height: 300px;
-
   position: relative;
   flex-direction: row;
 }
@@ -189,9 +176,6 @@ h1 {
 #dog-card {
   width: 300px;
   height: 300px;
-  align-items: right;
-  grid-row: 3 auto;
-
   position: relative;
   flex-direction: row;
 }
@@ -201,9 +185,9 @@ h1 {
   height: 300px;
   position: relative;
   flex-direction: row;
-} */
+}
 
-/* =========== */
+/* ============================ */
 
 .overlay {
   position: fixed;
@@ -231,21 +215,30 @@ body.overlay-is-open .question-container {
   filter: blur(5px);
 }
 
-/* @media (min-width: 400px) {
+/* ======================================== */
+
+@media (min-width: 400px) {
   #image-container {
+    object-fit: contain;
     align-items: center;
+    width: 100%;
+  }
+  #image {
+    object-fit: contain;
+    align-items: center;
+    width: 100%;
   }
 }
 
 @media (max-width: 1450px) {
-  #image-contianer {
+  #image-container {
     align-items: center;
+    object-fit: contain;
+    width: 100%;
   }
-} */
-
-@media only screen and (max-width: 500px) {
-  img {
-    object-fit: cover;
+  #image {
+    object-fit: contain;
+    align-items: center;
     width: 100%;
   }
 }

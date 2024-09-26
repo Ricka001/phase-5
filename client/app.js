@@ -43,13 +43,13 @@ let questionArray = [
 let answers = [6, 6, 8, 13, 12, 18, 8];
 
 const images = [
-  "images/Lions.jpg",
-  "images/Rabbits.jpg",
-  "images/Cats.jpg",
-  "images/Meerkats.jpg",
-  "images/Penguin.jpg",
-  "images/Zebras.jpg",
-  "images/Butterflies.jpg",
+  "/Lions.jpg",
+  "/Rabbits.jpg",
+  "/Cats.jpg",
+  "/Meerkats.jpg",
+  "/Penguin.jpg",
+  "/Zebras.jpg",
+  "/Butterflies.jpg",
 ];
 
 function updateProblem() {
