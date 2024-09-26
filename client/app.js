@@ -43,13 +43,13 @@ let questionArray = [
 let answers = [6, 6, 8, 13, 12, 18, 8];
 
 const images = [
-  "/Lions.jpg",
-  "/Rabbits.jpg",
-  "/Cats.jpg",
-  "/Meerkats.jpg",
-  "/Penguin.jpg",
-  "/Zebras.jpg",
-  "/Butterflies.jpg",
+  "images/Lions.jpg",
+  "images/Rabbits.jpg",
+  "images/Cats.jpg",
+  "images/Meerkats.jpg",
+  "images/Penguin.jpg",
+  "images/Zebras.jpg",
+  "images/Butterflies.jpg",
 ];
 
 function updateProblem() {
@@ -133,7 +133,7 @@ async function completedData() {
 
   try {
     console.log(username);
-    const res = await fetch("https://phase-5-olau.onrender.com", {
+    const res = await fetch("https://phase-5-olau.onrender.com/phase-five", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, age, score }),
@@ -147,7 +147,7 @@ async function completedData() {
 }
 
 async function renderLeaderboard() {
-  const res = await fetch("https://phase-5-olau.onrender.com");
+  const res = await fetch("https://phase-5-olau.onrender.com/get-user-data");
   const boardScores = await res.json();
 
   boardScores.forEach((phase) => {
@@ -176,44 +176,44 @@ async function renderLeaderboard() {
 
 //=================
 
-// const chickenCard = document.getElementById("chicken-card");
-// const chickendropZone = document.getElementById("chicken-drop-zone");
-// chickenCard.addEventListener("dragstart", function (event) {
-//   console.log(event);
-// });
-// chickendropZone.addEventListener("dragover", function (event) {
-//   event.preventDefault();
-// });
-// chickendropZone.addEventListener("drop", function (event) {
-//   chickendropZone.appendChild(chickenCard);
-// });
+const chickenCard = document.getElementById("chicken-card");
+const chickendropZone = document.getElementById("chicken-drop-zone");
+chickenCard.addEventListener("dragstart", function (event) {
+  console.log(event);
+});
+chickendropZone.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+chickendropZone.addEventListener("drop", function (event) {
+  chickendropZone.appendChild(chickenCard);
+});
 
-// // ===============
+// ===============
 
-// const cowCard = document.getElementById("cow-card");
-// const cowdropZone = document.getElementById("cow-drop-zone");
-// cowCard.addEventListener("dragstart", function (event) {
-//   console.log(event);
-// });
-// cowdropZone.addEventListener("dragover", function (event) {
-//   event.preventDefault();
-// });
-// cowdropZone.addEventListener("drop", function (event) {
-//   cowdropZone.appendChild(cowCard);
-// });
+const cowCard = document.getElementById("cow-card");
+const cowdropZone = document.getElementById("cow-drop-zone");
+cowCard.addEventListener("dragstart", function (event) {
+  console.log(event);
+});
+cowdropZone.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+cowdropZone.addEventListener("drop", function (event) {
+  cowdropZone.appendChild(cowCard);
+});
 
-// // ==============
+// ==============
 
-// const dogCard = document.getElementById("dog-card");
-// const dogdropZone = document.getElementById("dog-drop-zone");
-// dogCard.addEventListener("dragstart", function (event) {
-//   console.log(event);
-// });
-// dogdropZone.addEventListener("dragover", function (event) {
-//   event.preventDefault();
-// });
-// dogdropZone.addEventListener("drop", function (event) {
-//   dogdropZone.appendChild(dogCard);
-// });
+const dogCard = document.getElementById("dog-card");
+const dogdropZone = document.getElementById("dog-drop-zone");
+dogCard.addEventListener("dragstart", function (event) {
+  console.log(event);
+});
+dogdropZone.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+dogdropZone.addEventListener("drop", function (event) {
+  dogdropZone.appendChild(dogCard);
+});
 
 //====================
