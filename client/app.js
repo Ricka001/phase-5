@@ -165,9 +165,6 @@ async function renderLeaderboard() {
 
     scoreElement.appendChild(nameElement);
     scoreElement.appendChild(ageElement);
-
-    scoreElement.appendChild(scoreElement);
-
     scoreElement.appendChild(scoreElementScore);
 
     leaderboard.appendChild(scoreElement);
