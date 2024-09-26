@@ -55,7 +55,7 @@ h1 {
   color: #f77f00;
   overflow: scroll;
   height: 200px;
-  width: 200px;
+  width: 300px;
   background-color: white;
 }
 
@@ -231,7 +231,7 @@ body.overlay-is-open .question-container {
   filter: blur(5px);
 }
 
-@media (min-width: 400px) {
+/* @media (min-width: 400px) {
   #image-container {
     align-items: center;
   }
@@ -240,5 +240,12 @@ body.overlay-is-open .question-container {
 @media (max-width: 1450px) {
   #image-contianer {
     align-items: center;
+  }
+} */
+
+@media only screen and (max-width: 500px) {
+  img {
+    object-fit: cover;
+    width: 100%;
   }
 }
