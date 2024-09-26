@@ -1,9 +1,11 @@
-Client link: render link  
-Server link: render link
+Client link: [render link](https://phase-5-1.onrender.com)  
+Server link: [render link](https://phase-5-olau.onrender.com)
 
-![screenshot of wireframe](./screenshots/wireframe%201.png)  
-![screenshot of wireframe](./screenshots/wireframe%202.png)  
-![screenshot of wireframe](./screenshots/wireframe%203.png)
+![initial project planning - screenshot of wireframe](./screenshots/wireframe%201.png)  
+![initial project planning - screenshot of wireframe](./screenshots/wireframe%202.png)  
+![initial project planning - screenshot of wireframe](./screenshots/wireframe%203.png)  
+![re-work - screenshot of wireframe](./screenshots/wireframe%204.png)
+![proof of seeded data in db - schema visualizer](./screenshots/db.png)
 
 ## User Stories
 
@@ -47,9 +49,12 @@ Were there any requirements or goals that you were unable to achieve?
 
 If so, what was it that you found difficult about these tasks?
 
-What errors or bugs did you encounter while completing your assignment? How did you solve them?
+What errors or bugs did you encounter while completing your assignment? How did you solve them?  
+Github conflicts, fetch errors and so many bugs. Debugged as a team
 
-Resources used and for what topics:
+Resources used and for what topics:  
+stackoverflow: arrays and getting the next item in the array  
+YT: LearnWebCode: help with questions and scoring, progress bar and blurring the win/lose alerts.
 
 - Khadija
 
@@ -69,5 +74,4 @@ If so, what was it that you found difficult about these tasks?
 
 What errors or bugs did you encounter while completing your assignment? How did you solve them?
 
-Resources used and for what topics:  
-
+Resources used and for what topics:
