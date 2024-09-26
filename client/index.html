@@ -1,111 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./app.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Phase 5</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module" src="./app.js" defer></script>
-  <link rel="stylesheet" href="./style.css" />
-  <title>Phase 5</title>
-</head>
-
-<body>
-  <h1>Phase 5</h1>
-  <div class="rows-one">
-    <div class="columns-one">
-
-      <form id="form">
-        <div id="user-details">
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" placeholder="Name" required />
-          <label for="age">Age</label>
-          <input type="number" name="age" id="age" placeholder="Age" required />
-          <button type="submit" class="s-button">Submit</button>
-        </div>
-      </form>
-
-
-
-      <div id="question-container">
-        <p class="problem"></p>
-        <form id="answer-form">
-          <input type="text" class="answer-field" autocomplete="off" placeholder="Answer" id="answer" />
-          <button type="submit" class="s-button">Enter</button>
-        </form>
-        <p>
-          You need <span class="points-needed">7</span> more points, and are
-          allowed to make <span class="mistakes-allowed">2</span> more mistakes
-        </p>
-        <div class="progress">
-          <div class="boxes">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+  <body>
+    <h1>Phase 5</h1>
+    <div class="rows-one">
+      <div class="columns-one">
+        <form id="form">
+          <div id="user-details">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Name"
+              required
+            />
+            <label for="age">Age</label>
+            <input
+              type="number"
+              name="age"
+              id="age"
+              placeholder="Age"
+              required
+            />
+            <button type="submit" class="s-button">Submit</button>
           </div>
-          <div class="progress-inner"></div>
+        </form>
+
+        <div id="question-container">
+          <p class="problem"></p>
+          <form id="answer-form">
+            <input
+              type="text"
+              class="answer-field"
+              autocomplete="off"
+              placeholder="Answer"
+              id="answer"
+            />
+            <button type="submit" class="s-button">Enter</button>
+          </form>
+          <p>
+            You need <span class="points-needed">7</span> more points, and are
+            allowed to make <span class="mistakes-allowed">2</span> more
+            mistakes
+          </p>
+          <div class="progress">
+            <div class="boxes">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </div>
+            <div class="progress-inner"></div>
+          </div>
         </div>
       </div>
+      <div id="leaderboard">Scoreboard!</div>
     </div>
-    <div id="leaderboard">Scoreboard!
+    <div id="image-container">
+      <img src="/Lions.jpg" alt="Lions" id="image" width="800" height="600" />
     </div>
-  </div>
-  <div id="image-container">
-    <img src="/Lions.jpg" alt="Lions" id="image" width="800" height="600" />
-  </div>
-
-  <!-- <div class="audio-row">
-    <div class="audio-column">
-      <audio src="/Chicken.mp3" class="audio" width="100%" controls></audio>
+    <!-- ============================ -->
+    <div class="audio-row">
+      <div class="audio-column">
+        <audio src="/Chicken.mp3" class="audio" width="100%" controls></audio>
+      </div>
+      <div class="audio-column">
+        <audio src="/Cow.mp3" class="audio" width="100%" controls></audio>
+      </div>
+      <div class="audio-column">
+        <audio src="/Dog.mp3" class="audio" width="100%" controls></audio>
+      </div>
     </div>
-    <div class="audio-column">
-      <audio src="/Cow.mp3" class="audio" width="100%" controls></audio>
-    </div>
-    <div class="audio-column">
-      <audio src="/Dog.mp3" class="audio" width="100%" controls></audio>
-    </div>
-
+    <!-- ============================= -->
     <div class="dropzone-row">
-      <div class="dropzone-column" class="drop-zone" id="chicken-drop-zone" width="300px" height="300px"></div>
+      <div
+        class="dropzone-column"
+        class="drop-zone"
+        id="chicken-drop-zone"
+        width="300px"
+        height="300px"
+      ></div>
 
-      <div class="dropzone-column" id="cow-drop-zone" id="cow-drop" width="300px" height="300px"></div>
+      <div
+        class="dropzone-column"
+        id="cow-drop-zone"
+        id="cow-drop"
+        width="300px"
+        height="300px"
+      ></div>
 
-      <div class="dropzone-column" id="dog-drop-zone" id="dog-drop-zone" width="300px" height="300px"></div>
+      <div
+        class="dropzone-column"
+        id="dog-drop-zone"
+        id="dog-drop-zone"
+        width="300px"
+        height="300px"
+      ></div>
     </div>
-
+    <!-- ==================================== -->
     <div class="container">
       <div class="container-column" id="dog-card" draggable="true">
         <img src="/Dog.jpg" alt="Dog" width="300px" height="300px" />
       </div>
+
+      <div class="container-column" id="chicken-card" draggable="true">
+        <img src="/Chicken.jpg" alt="Chicken" width="300px" height="300px" />
+      </div>
+      <div class="container-column" id="cow-card" draggable="true">
+        <img src="/Cow.jpg" alt="Cow" width="300px" height="300px" />
+      </div>
     </div>
 
-    <div class="container-column" id="chicken-card" draggable="true">
-      <img src="/Chicken.jpg" alt="Chicken" width="300px" height="300px" />
+    <!-- ======================  -->
+
+    <div class="overlay">
+      <div class="overlay-inner">
+        <p class="end-message"></p>
+        <button class="reset-button">Start Over</button>
+      </div>
     </div>
-
-    <div class="container-column" id="cow-card" draggable="true">
-      <img src="/Cow.jpg" alt="Cow" width="300px" height="300px" />
-    </div>
-
-
-
-  </div> -->
-
-  </div>
-
-  <!-- ====================== -->
-
-  <div class="overlay">
-    <div class="overlay-inner">
-      <p class="end-message"></p>
-      <button class="reset-button">Start Over</button>
-    </div>
-  </div>
-</body>
-<footer>Created by Anthony, Kat, Khadija & Serdrick</footer>
-
+  </body>
+  <footer>Created by Anthony, Kat, Khadija & Serdrick</footer>
 </html>

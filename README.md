@@ -60,13 +60,26 @@ YT: LearnWebCode: help with questions and scoring, progress bar and blurring the
 
 Were there any requirements or goals that you were unable to achieve?
 
+- We planned to do a game in which you count the number of animals and input the answer - if correctly answered image would change to the next and so on. A scoreboard would then be created to store your game data/score. We were able to accomplish this.
+- As a stretch we wanted another level below with a different game containing draggable elements. Although the draggable elements were made I was unable to quantify a result from this game and connect it to the database. Also I was unable to do a popup.
+
 If so, what was it that you found difficult about these tasks?
+
+- I found the draggable game section very difficult
+- I found inputting media queries to make the website accessible for mobiles difficult as the main-image-container would continously get cut off from the sides (I think i got the main image accessible on a mobile now but definetley not the draggable game)
 
 What errors or bugs did you encounter while completing your assignment? How did you solve them?
 
+- We had some issues with pulling and merging requests from github as well as some pull conflicts - but we resolved these effectively as a team.
+- We had issues with render and inputting images/audio in a public folder but we resolved these with assistance
+
 Resources used and for what topics:
 
-- Serdrick
+- https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
+- https://www.youtube.com/watch?v=ymDjvycjgUM&t=82s
+- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries
+
+* Serdrick
 
 Were there any requirements or goals that you were unable to achieve?
 
