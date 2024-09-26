@@ -230,3 +230,15 @@ body.overlay-is-open .overlay {
 body.overlay-is-open .question-container {
   filter: blur(5px);
 }
+
+@media (min-width: 400px) {
+  #image-container {
+    align-items: center;
+  }
+}
+
+@media (max-width: 1450px) {
+  #image-contianer {
+    align-items: center;
+  }
+}
