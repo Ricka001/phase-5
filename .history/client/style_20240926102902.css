@@ -4,13 +4,6 @@ h1 {
   align-items: center;
 }
 
-#image-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding-top: 10px;
-}
-
 .rows-one {
   display: flex;
   justify-content: space-around;

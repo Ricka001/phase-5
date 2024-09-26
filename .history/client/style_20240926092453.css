@@ -1,25 +1,3 @@
-h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#image-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding-top: 10px;
-}
-
-.rows-one {
-  display: flex;
-  justify-content: space-around;
-}
-
-#leaderboard {
-  border: gray solid 5px;
-}
-
 #image {
   margin-bottom: 2em;
 }
